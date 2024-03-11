@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import BlogPost, Comment, ContactFormMessage
+from .models import BlogPost, ContactFormMessage
 # Register your models here.
 
 

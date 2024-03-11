@@ -8,6 +8,10 @@
     <a href="{% url 'post_list' %}">All Posts</a>
     <h1>{{ post.title }}</h1>
     <p>{{ post.content }}</p>
+    {% if post.image %}
+        <img src="{{ post.image.url }}" alt="{{ post.title }}">
+    {% endif %}
     <p>Published at: {{ post.created_at }}</p>
 </body>
 </html>
+
