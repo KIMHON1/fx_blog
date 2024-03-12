@@ -3,6 +3,13 @@ from .models import BlogPost
 from .forms import ContactForm
 # Create your views here.
 
+from django.shortcuts import render
+
+
+
+def index(request):
+    return render(request, 'index.html')
+
 def post_list(request):
     posts = BlogPost.objects.all()
     return render(request, 'post_list.html', {'posts': posts})
