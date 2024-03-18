@@ -20,5 +20,5 @@ class BlogPostAdmin(admin.ModelAdmin):
 
 @admin.register(ContactFormMessage)
 class ContactFormMessageAdmin(admin.ModelAdmin):
-    list_display = ('name', 'email', 'subject', 'created_at')
+    list_display = ('name', 'email', 'created_at')
     # Add more options as needed
