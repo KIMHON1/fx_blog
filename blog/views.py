@@ -6,16 +6,16 @@ from .forms import ContactForm
 from django.shortcuts import render
 
 def post_list(request):
-    posts = BlogPost.objects.order_by('-created_at')[:2]
+    posts = BlogPost.objects.order_by('-created_at')[:4]
     return render(request, 'index.html', {'posts': posts})
     # posts = BlogPost.objects.all()
     # return render(request, 'post_list.html', {'posts': posts})
 
 def post_detail(request, post_id):
     post = BlogPost.objects.get(pk=post_id)
-    next_post = BlogPost.objects.filter(created_at__gt=post.created_at).order_by('created_at').first()
-    print(next_post)
-    return render(request, 'post_detail.html', {'post': post,})
+    next_post = BlogPost.objects.filter(created_at__gt=post.created_at).exclude(id=post_id).order_by('created_at').first()
+   
+    return render(request, 'post_detail.html', {'post': post,'next_post': next_post})
 
 
 def confirmation(request):
