@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'fx_blog.wsgi.application'
 DATABASES = {  
     'default': {  
         'ENGINE': 'django.db.backends.mysql',  
-        'NAME': 'blog',  
+        'NAME': 'fx',  
         'USER':'root',  
         'PASSWORD':'',  
         'HOST':'localhost',  

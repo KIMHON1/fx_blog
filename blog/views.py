@@ -18,14 +18,18 @@ def post_detail(request, post_id):
     return render(request, 'post_detail.html', {'post': post,})
 
 
+def confirmation(request):
+    return render(request, 'confirmations.html')
+
 def contact_view(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
             form.save()
             # Optionally, redirect to a success page
-            return redirect('/blog')
-
+            return redirect('confirmation')
     else:
         form = ContactForm()
     return render(request, 'contact_form.html', {'form': form})
+
+
